@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101426">
+  <meta name="description" content="Ultra School — учись, развивайся и открывай новые возможности!">
+  <title>Ultra School — учись с удовольствием</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <a class="brand" href="#home" data-page="home">
+        <span class="brand-icon">U</span>
+        <span>Ultra<span class="brand-light">School</span></span>
+      </a>
+
+      <div class="side-label">ОБУЧЕНИЕ</div>
+      <nav class="navigation">
+        <button class="nav-item active" data-page="home">
+          <span>⌂</span> Главная
+        </button>
+        <button class="nav-item" data-page="courses">
+          <span>▤</span> Мои курсы
+        </button>
+        <button class="nav-item" data-page="assistant">
+          <span>✦</span> ИИ-помощник
+          <span class="nav-new">AI</span>
+        </button>
+        <button class="nav-item" data-page="offline">
+          <span>↓</span> Офлайн-уроки
+        </button>
+      </nav>
+
+      <div class="side-label">МОЙ ПРОГРЕСС</div>
+      <nav class="navigation">
+        <button class="nav-item" data-page="achievements">
+          <span>♜</span> Достижения
+        </button>
+        <button class="nav-item" data-page="league">
+          <span>♛</span> Лига учеников
+        </button>
+        <button class="nav-item" data-page="friends">
+          <span>♧</span> Друзья
+        </button>
+        <button class="nav-item" data-page="profile">
+          <span>◉</span> Мой профиль
+        </button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="mini-card">
+          <div class="mini-icon">✦</div>
+          <strong>Каждый день — шаг вперёд!</strong>
+          <p>Учись регулярно и открывай достижения.</p>
+          <button class="text-button" data-page="achievements">
+            Мои достижения →
+          </button>
+        </div>
+        <div class="sidebar-note">ULTRA SCHOOL · DEMO 1.0</div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-brand" data-page="home">
+          <span class="brand-icon">U</span> Ultra School
+        </button>
+
+        <div class="breadcrumb" id="breadcrumb">Главная / Обзор</div>
+
+        <div class="top-actions">
+          <div class="streak-pill" title="Твоя ежедневная серия">
+            🔥 <strong id="topStreak">0</strong>
+          </div>
+          <div class="crystal-pill">
+            💎 <strong id="topCrystals">100</strong>
+          </div>
+          <button class="avatar-button" data-page="profile" id="topAvatar">
+            🧑‍🚀
+          </button>
+        </div>
+      </header>
+
+      <div class="content">
+
+        <!-- ГЛАВНАЯ -->
+        <section class="page active" id="page-home">
+          <div class="hero">
+            <div class="hero-content">
+              <div class="eyebrow"><span class="status-dot"></span> ТВОЁ ПРОСТРАНСТВО ЗНАНИЙ</div>
+              <h1>Привет, <span id="greetingName">исследователь</span>! 👋</h1>
+              <p>Новые знания начинаются с одного маленького шага.
+                Продолжим твоё путешествие?</p>
+              <div class="hero-buttons">
+                <button class="btn btn-primary" data-page="courses">
+                  Продолжить обучение <span>→</span>
+                </button>
+                <button class="btn btn-glass" data-page="assistant">
+                  ✦ Спросить ИИ
+                </button>
+              </div>
+              <div class="hero-meta">
+                <span>🎯 Учись в своём темпе</span>
+                <span>✧ Открывай новые возможности</span>
+              </div>
+            </div>
+            <div class="hero-art">
+              <div class="orbit orbit-one"></div>
+              <div class="orbit orbit-two"></div>
+              <div class="planet">🚀</div>
+              <div class="floating-card float-top">✨ Новые знания</div>
+              <div class="floating-card float-bottom">💎 +10 кристаллов</div>
+              <div class="star star-one">✦</div>
+              <div class="star star-two">✧</div>
+            </div>
+          </div>
+
+          <div class="stats-grid">
+            <article class="stat-card">
+              <div class="stat-icon purple">⚡</div>
+              <div><span class="stat-label">Мой опыт</span>
+                <strong id="homeXP">0 XP</strong>
+                <small>Продолжай учиться!</small>
+              </div>
+            </article>
+            <article class="stat-card">
+              <div class="stat-icon orange">🔥</div>
+              <div><span class="stat-label">Серия дней</span>
+                <strong id="homeStreak">0 дней</strong>
+                <small>Твоя учебная привычка</small>
+              </div>
+            </article>
+            <article class="stat-card">
+              <div class="stat-icon blue">📚</div>
+              <div><span class="stat-label">Уроки завершены</span>
+                <strong id="homeLessons">0</strong>
+                <small>Знания накапливаются</small>
+              </div>
+            </article>
+            <article class="stat-card">
+              <div class="stat-icon green">🏆</div>
+              <div><span class="stat-label">Достижения</span>
+                <strong id="homeAchievements">0</strong>
+                <small>Твои маленькие победы</small>
+              </div>
+            </article>
+          </div>
+
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow">ТВОЙ МАРШРУТ</div>
+              <h2>Продолжить обучение</h2>
+              <p>Выбирай предмет и развивай свои навыки.</p>
+            </div>
+            <button class="text-button" data-page="courses">Все курсы →</button>
+          </div>
+
+          <div class="course-grid" id="homeCourses"></div>
+
+          <div class="two-column">
+            <article class="panel">
+              <div class="panel-heading">
+                <div><h3>Твоя цель на сегодня</h3>
+                  <p>Даже небольшой шаг имеет значение.</p></div>
+                <span class="panel-emoji">🎯</span>
+              </div>
+              <div class="goal-progress">
+                <div><strong id="goalCount">0 из 3 уроков</strong>
+                  <span id="goalPercent">0%</span></div>
+                <div class="progress-track"><div id="goalBar" class="progress-fill"></div></div>
+              </div>
+              <button class="btn btn-secondary full-width" data-page="courses">
+                Перейти к урокам →
+              </button>
+            </article>
+
+            <article class="panel quote-panel">
+              <div class="quote-symbol">“</div>
+              <p class="quote-text">Не обязательно знать всё. Важно каждый день узнавать что-то новое.</p>
+              <div class="quote-author">ТВОЁ НАПОМИНАНИЕ НА СЕГОДНЯ</div>
+              <button class="text-button" data-page="achievements">Посмотреть прогресс →</button>
+            </article>
+          </div>
+        </section>
+
+        <!-- КУРСЫ -->
+        <section class="page" id="page-courses">
+          <div class="page-heading">
+            <div class="eyebrow">ТВОЯ БИБЛИОТЕКА ЗНАНИЙ</div>
+            <h1>Исследуй новые предметы 📚</h1>
+            <p>Выбирай курс, проходи уроки и получай опыт.</p>
+          </div>
+          <div class="filter-row">
+            <input class="search-input" id="courseSearch"
+              type="search" placeholder="🔎 Найти предмет...">
+            <select class="select-input" id="gradeSelect" aria-label="Класс">
+              <option value="all">Все классы</option>
+              <option value="5">5 класс</option>
+              <option value="6">6 класс</option>
+              <option value="7">7 класс</option>
+              <option value="8">8 класс</option>
+              <option value="9">9 класс</option>
+            </select>
+          </div>
+          <div class="course-grid" id="allCourses"></div>
+        </section>
+
+        <!-- ИИ-ПОМОЩНИК -->
+        <section class="page" id="page-assistant">
+          <div class="page-heading">
+            <div class="eyebrow">ТВОЙ УЧЕБНЫЙ НАПАРНИК</div>
+            <h1>Умный помощник <span class="gradient-text">Ultra AI</span> ✦</h1>
+            <p>Задавай вопросы, разбирай примеры и учись шаг за шагом.</p>
+          </div>
+
+          <div class="ai-layout">
+            <div class="chat-panel">
+              <div class="chat-header">
+                <div class="ai-avatar">✦</div>
+                <div><strong>Ultra AI</strong>
+                  <span><span class="status-dot"></span> Учебный режим</span></div>
+                <button class="icon-button" id="clearChat" title="Очистить чат">↻</button>
+              </div>
+              <div class="chat-messages" id="chatMessages" aria-live="polite">
+                <div class="message assistant-message">
+                  <div class="message-avatar">✦</div>
+                  <div class="message-body">
+                    <strong>Ultra AI</strong>
+                    <p>Привет! 👋 Я помогу разобраться с учебными задачами.
+                    Напиши пример по математике, задай вопрос или выбери тему ниже.
+                    Я постараюсь объяснить решение понятными шагами.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="quick-prompts">
+                <button class="prompt-chip" data-prompt="Объясни дроби простыми словами">➗ Объясни дроби</button>
+                <button class="prompt-chip" data-prompt="Как решать уравнения? Покажи пример">🧮 Уравнения</button>
+                <button class="prompt-chip" data-prompt="Расскажи интересный факт по истории">🏛️ История</button>
+              </div>
+              <form class="chat-form" id="chatForm">
+                <input id="chatInput" autocomplete="off"
+                  placeholder="Напиши вопрос или пример..." maxlength="1000">
+                <button type="submit" class="send-button" aria-label="Отправить">➤</button>
+              </form>
+              <div class="chat-disclaimer">Учебная демоверсия. Проверяй ответы по учебнику.</div>
+            </div>
+
+            <aside class="ai-side">
+              <div class="panel">
+                <div class="ai-side-icon">🧠</div>
+                <h3>Как учиться эффективнее?</h3>
+                <ul class="tip-list">
+                  <li><span>01</span> Проси объяснять решение по шагам.</li>
+                  <li><span>02</span> Пробуй решать похожие задачи самостоятельно.</li>
+                  <li><span>03</span> Уточняй, если что-то осталось непонятным.</li>
+                </ul>
+              </div>
+              <div class="panel ai-topic-panel">
+                <h3>Попробуй спросить</h3>
+                <button class="topic-button" data-prompt="Объясни проценты на простом примере">Проценты на примере <span>→</span></button>
+                <button class="topic-button" data-prompt="Составь небольшую викторину по информатике">Викторина по информатике <span>→</span></button>
+                <button class="topic-button" data-prompt="Дай мне три задачи на логику с ответами в конце">Задачи на логику <span>→</span></button>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <!-- ОФЛАЙН -->
+        <section class="page" id="page-offline">
+          <div class="page-heading">
+            <div class="eyebrow">ЗНАНИЯ ВСЕГДА С ТОБОЙ</div>
+            <h1>Офлайн-уроки 📥</h1>
+            <p>Сохраняй учебные материалы в браузере, чтобы возвращаться к ним позже.</p>
+          </div>
+          <div class="notice">
+            <span>ℹ️</span>
+            <div><strong>Как это работает?</strong>
+              <p>Сохраняются текстовые материалы внутри сайта. После первого открытия
+              страницы некоторые возможности доступны без интернета, если браузер
+              сохранил файлы. Это демоверсия без полноценной системы синхронизации.</p>
+            </div>
+          </div>
+          <div class="course-grid" id="offlineCourses"></div>
+        </section>
+
+        <!-- ДОСТИЖЕНИЯ -->
+        <section class="page" id="page-achievements">
+          <div class="page-heading">
+            <div class="eyebrow">КАЖДАЯ ПОБЕДА ВАЖНА</div>
+            <h1>Твои достижения 🏆</h1>
+            <p>Выполняй задания, получай опыт и открывай награды.</p>
+          </div>
+          <div class="achievement-summary panel">
+            <div class="big-trophy">🏆</div>
+            <div class="achievement-summary-text">
+              <span class="muted">ТВОИ НАГРАДЫ</span>
+              <h2><span id="achievementCount">0</span> достижений открыто</h2>
+              <p>Продолжай исследовать мир знаний!</p>
+            </div>
+            <div class="achievement-total"><strong id="achievementXP">0 XP</strong><span>Всего опыта</span></div>
+          </div>
+          <div class="achievement-grid" id="achievementGrid"></div>
+        </section>
+
+        <!-- ЛИГА -->
+        <section class="page" id="page-league">
+          <div class="page-heading">
+            <div class="eyebrow">РАСТИ ВМЕСТЕ С ЗНАНИЯМИ</div>
+            <h1>Лига учеников ⚡</h1>
+            <p>Твоя личная таблица прогресса. Здесь пока показаны демоданные.</p>
+          </div>
+          <div class="league-banner">
+            <div><span class="eyebrow">ТВОЙ ТЕКУЩИЙ УРОВЕНЬ</span>
+              <h2 id="leagueLevel">Бронзовый исследователь</h2>
+              <p>Зарабатывай опыт, проходя уроки.</p></div>
+            <div class="league-medal">🥉</div>
+          </div>
+          <div class="panel">
+            <div class="panel-heading"><div><h3>Таблица прогресса</h3>
+              <p>Результаты этого браузера и демонстрационные участники.</p></div></div>
+            <div class="leaderboard" id="leaderboard"></div>
+          </div>
+        </section>
+
+        <!-- ДРУЗЬЯ -->
+        <section class="page" id="page-friends">
+          <div class="page-heading">
+            <div class="eyebrow">УЧИТЬСЯ ВМЕСТЕ ИНТЕРЕСНЕЕ</div>
+            <h1>Друзья и подарки 🎁</h1>
+            <p>Добавляй друзей в своей демоверсии и отправляй им кристаллы.</p>
+          </div>
+          <div class="friend-add panel">
+            <div><h3>Добавить друга</h3>
+              <p>Создай локальную карточку друга в этом браузере.</p></div>
+            <form id="friendForm">
+              <input id="friendName" placeholder="Имя друга" maxlength="24" required>
+              <button class="btn btn-primary" type="submit">+ Добавить</button>
+            </form>
+          </div>
+          <div class="friend-grid" id="friendGrid"></div>
+          <div class="notice">
+            <span>💎</span><div><strong>Виртуальные подарки</strong>
+            <p>Отправка подарка списывает кристаллы из твоего локального баланса.
+            Друг не получит их на другом устройстве: для настоящей социальной системы
+            потребуется сервер и учётные записи.</p></div>
+          </div>
+        </section>
+
+        <!-- ПРОФИЛЬ -->
+        <section class="page" id="page-profile">
+          <div class="page-heading">
+            <div class="eyebrow">ТВОЁ ЛИЧНОЕ ПРОСТРАНСТВО</div>
+            <h1>Мой профиль 👤</h1>
+            <p>Настрой профиль и выбери образ для своего учебного путешествия.</p>
+          </div>
+          <div class="profile-layout">
+            <div class="panel profile-card">
+              <div class="profile-avatar" id="profileAvatar">🧑‍🚀</div>
+              <h2 id="profileDisplayName">Исследователь</h2>
+              <span class="level-badge" id="profileLevel">Уровень 1</span>
+              <div class="profile-xp"><strong id="profileXP">0 XP</strong>
+                <span>Накопленный опыт</span></div>
+              <div class="progress-track"><div class="progress-fill" id="profileBar"></div></div>
+              <p class="muted" id="profileNextLevel">До следующего уровня: 100 XP</p>
+            </div>
+            <div class="panel">
+              <h3>Настройки профиля</h3>
+              <form id="profileForm" class="profile-form">
+                <label>Твоё имя
+                  <input id="profileName" maxlength="24" placeholder="Исследователь" required>
+                </label>
+                <label>Класс
+                  <select id="profileGrade">
+                    <option value="5">5 класс</option><option value="6">6 класс</option>
+                    <option value="7">7 класс</option><option value="8">8 класс</option>
+                    <option value="9">9 класс</option>
+                  </select>
+                </label>
+                <label>Язык интерфейса
+                  <select id="profileLanguage">
+                    <option value="ru">Русский</option>
+                    <option value="en">English (деморежим)</option>
+                    <option value="kk">Қазақша (деморежим)</option>
+                  </select>
+                </label>
+                <button class="btn btn-primary" type="submit">Сохранить профиль</button>
+              </form>
+              <div class="avatar-shop">
+                <h3>Выбери аватар</h3>
+                <p class="muted">Нажми на понравившийся образ.</p>
+                <div class="avatar-options" id="avatarOptions"></div>
+              </div>
+            </div>
+          </div>
+          <div class="panel danger-zone">
+            <div><h3>Сбросить прогресс</h3>
+              <p>Удалит локальные результаты, кристаллы и настройки Ultra School.</p></div>
+            <button class="btn btn-danger" id="resetProgress">Сбросить данные</button>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <span>✦ Ultra School</span>
+          <span>Учись. Исследуй. Развивайся.</span>
+          <span>Учебный проект · 2026</span>
+        </footer>
+      </div>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -10,7 +10,121 @@ const $$ = (selector) => [...document.querySelectorAll(selector)];
 
 const STORAGE_KEY = "ultra-school-save-v1";
 
-const AVATARS = ["🧑‍🚀", "🦊", "🐼", "🐱", "🦉", "🐉", "🦄", "🤖"];
+const AVATAR_SHOP = [
+  { icon: "🧑‍🚀", name: "Исследователь", price: 0 },
+  { icon: "🦊", name: "Хитрый лис", price: 30 },
+  { icon: "🐼", name: "Панда", price: 30 },
+  { icon: "🐱", name: "Котик", price: 40 },
+  { icon: "🦉", name: "Мудрая сова", price: 50 },
+  { icon: "🐉", name: "Дракон", price: 100 },
+  { icon: "🦄", name: "Единорог", price: 120 },
+  { icon: "🤖", name: "Робот", price: 80 },
+  { icon: "🐺", name: "Волк", price: 70 },
+  { icon: "🦁", name: "Лев", price: 90 },
+  { icon: "🐸", name: "Лягушонок", price: 45 },
+  { icon: "🐙", name: "Осьминог", price: 65 },
+  { icon: "🦋", name: "Бабочка", price: 75 },
+  { icon: "👾", name: "Космический пришелец", price: 110 },
+  { icon: "🧙", name: "Волшебник", price: 150 },
+  { icon: "🥷", name: "Ниндзя", price: 130 }
+];
+
+const CLOTHING_SHOP = [
+    {
+        id: "hoodie_orange",
+        name: "Оранжевая кофта",
+        category: "top",kind: "hoodie",
+        icon: "🧥",
+        price: 0,
+        color: "#ff8800"
+    },
+    {
+        id: "hoodie_yellow",
+        name: "Жёлтая кофта",
+        category: "top",
+        kind: "hoodie",
+        icon: "🧥",
+        price: 0,
+        color: "#ffd700"
+    },
+    {
+        id: "hoodie_green",
+        name: "Зелёная кофта",
+        category: "top",
+        kind: "hoodie",
+        icon: "🧥",
+        price: 0,
+        color: "#20b957"
+    },
+    {
+        id: "hoodie_blue",
+        name: "Голубая кофта",
+        category: "top",
+        kind: "hoodie",
+        icon: "🧥",
+        price: 0,
+        color: "#2196f3"
+    },
+    {
+        id: "hoodie_indigo",
+        name: "Синяя кофта",
+        category: "top",
+        kind: "hoodie",
+        icon: "🧥",
+        price: 0,
+        color: "#4338ca"
+    },
+    {
+        id: "hoodie_violet",
+        name: "Фиолетовая кофта",
+        category: "top",
+        kind: "hoodie",
+        icon: "🧥",
+        price: 0,
+        color: "#9333ea"
+    },
+
+    // ПЛАТНАЯ ОДЕЖДА С РАДУЖНЫМ УЗОРОМ
+    {
+        id: "rainbow_cap",
+        name: "Радужная кепка",
+        category: "hat",
+        icon: "🧢",
+        price: 60,
+        rainbow: true
+    },
+    {
+        id: "rainbow_glasses",
+        name: "Радужные очки",
+        category: "glasses",
+        icon: "👓",
+        price: 80,
+        rainbow: true
+    },
+    {
+        id: "rainbow_shirt",
+        name: "Радужная футболка",
+        category: "top",
+        kind: "shirt",
+        icon: "👕",
+        price: 100,
+        rainbow: true
+    },
+    {
+        id: "rainbow_hoodie",
+        name: "Радужная кофта",
+        category: "top",
+        kind: "hoodie",
+        icon: "🧥",
+        price: 120,
+        rainbow: true
+    }
+];
+
+// Все обычные предметы сразу доступны бесплатно.
+const FREE_CLOTHING_IDS = CLOTHING_SHOP
+    .filter(item => item.price === 0)
+    .map(item => item.id);
 
 const COURSES = [
   {
@@ -258,6 +372,9 @@ function createDefaultState() {
     grade: "6",
     language: "ru",
     avatar: "🧑‍🚀",
+
+    ownedAvatars: ["🧑‍🚀"],
+
     xp: 0,
     crystals: 100,
     completed: [],
@@ -271,7 +388,22 @@ function createDefaultState() {
     lastVisit: "",
     lastRewardDate: "",
     offlineLessons: [],
-    lessonAttempts: 0
+    lessonAttempts: 0,
+
+    // Купленные и выбранные мини-значки
+    ownedBadges: ["explorer"],
+    equippedBadge: "explorer",
+
+    // Все купленные предметы одежды
+    ownedClothing: [...FREE_CLOTHING_IDS],
+
+    // Текущий образ
+    outfit: {
+        hat: null,
+        glasses: null,
+        top: "shirt_blue"
+    },
+
   };
 }
 
